@@ -1807,7 +1807,7 @@
 		for (var j = 0; j < plantNum; j++) {
 			if (playerLost()) break;
 			var x = Math.floor(Math.random() * 16);
-			if (tiles[x].hp - toHit[j] <= 0)
+			if (tiles[x].hp - toHit[x] <= 0)
 				j--;
 			else {
 				array.push({
