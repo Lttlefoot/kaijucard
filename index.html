@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title>Kaiju Card</title>
-	<script src='https://cdn1.kongregate.com/javascripts/kongregate_api.js'></script>
 	<style type="text/css">
 		body {
 			width: 960px;
@@ -1284,10 +1283,6 @@
 		createTileListener(tiles[i]);
 	}
 
-	kongregateAPI.loadAPI(function(){
-		window.kongregate = kongregateAPI.getAPI();
-	});
-
 	function resetTile(tile) {
 		tile.hp = tileDictionary[tile.nome].hp;
 		tile.income = tileDictionary[tile.nome].income;
@@ -1944,8 +1939,6 @@
 	}
 
 	function youWin() {
-		kongregate.stats.submit("Game Won", 1);
-		if (rampageChance == 0.6) kongregate.stats.submit("Game Won (Hard)", 1);
 		setMode("animating");
 		var array = [];
 		winBarArray = [];
@@ -1975,7 +1968,6 @@
 	}
 
 	function gameOver() {
-		kongregate.stats.submit("Game Lost", 1);
 		setMode("animating");
 		setTimeout(function() {
 			for (var j=0; j < 16; j++) {
